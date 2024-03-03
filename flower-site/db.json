@@ -1,0 +1,345 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "image": "./src/assets/card/1.jpg",
+      "price": "Договорная",
+      "title": "ЮВ Феникс",
+      "rating": 1,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 2,
+      "image": "./src/assets/card/2.jpg",
+      "price": "Договорная",
+      "title": "Арбузный фреш",
+      "rating": 2,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 3,
+      "image": "./src/assets/card/3.jpg",
+      "price": "Договорная",
+      "title": "Царская невеста",
+      "rating": 3,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 4,
+      "image": "./src/assets/card/4.jpg",
+      "price": "Договорная",
+      "title": "Лара Андреа",
+      "rating": 4,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 5,
+      "image": "./src/assets/card/5.jpg",
+      "price": "Договорная",
+      "title": "Уникорн роуз",
+      "rating": 5,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 6,
+      "image": "./src/assets/card/6.jpg",
+      "price": "Договорная",
+      "title": "Анна Жанет",
+      "rating": 6,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 7,
+      "image": "./src/assets/card/7.jpg",
+      "price": "Договорная",
+      "title": "Та Марсель",
+      "rating": 7,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 8,
+      "image": "./src/assets/card/8.jpg",
+      "price": "Договорная",
+      "title": "Анна Каренина",
+      "rating": 8,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 9,
+      "image": "./src/assets/card/9.jpg",
+      "price": "Договорная",
+      "title": "Новис Ханна",
+      "rating": 9,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 10,
+      "image": "./src/assets/card/10.jpg",
+      "price": "Договорная",
+      "title": "Леона Галлактика",
+      "rating": 10,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 11,
+      "image": "./src/assets/card/11.jpg",
+      "price": "Договорная",
+      "title": "Жозефина",
+      "rating": 11,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 12,
+      "image": "./src/assets/card/12.jpg",
+      "price": "Договорная",
+      "title": "Ю моя прелесть",
+      "rating": 12,
+      "category": "Пеларгония"
+    },
+    {
+      "id": 13,
+      "image": "./src/assets/card/begonia/1.jpg",
+      "price": "Договорная",
+      "title": "Элатиор",
+      "rating": 13,
+      "category": "Бегония"
+    },
+    {
+      "id": 14,
+      "image": "./src/assets/card/begonia/2.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 14,
+      "category": "Бегония"
+    },
+    {
+      "id": 15,
+      "image": "./src/assets/card/begonia/3.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 15,
+      "category": "Бегония"
+    },
+    {
+      "id": 16,
+      "image": "./src/assets/card/begonia/4.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 16,
+      "category": "Бегония"
+    },
+    {
+      "id": 17,
+      "image": "./src/assets/card/begonia/5.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 17,
+      "category": "Бегония"
+    },
+    {
+      "id": 18,
+      "image": "./src/assets/card/begonia/6.jpg",
+      "price": "Договорная",
+      "title": "Элатиор",
+      "rating": 18,
+      "category": "Бегония"
+    },
+    {
+      "id": 19,
+      "image": "./src/assets/card/begonia/7.jpg",
+      "price": "Договорная",
+      "title": "Элатиор",
+      "rating": 19,
+      "category": "Бегония"
+    },
+    {
+      "id": 20,
+      "image": "./src/assets/card/begonia/8.jpg",
+      "price": "Договорная",
+      "title": "Вечноцветущая",
+      "rating": 20,
+      "category": "Бегония"
+    },
+    {
+      "id": 21,
+      "image": "./src/assets/card/begonia/9.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 21,
+      "category": "Бегония"
+    },
+    {
+      "id": 22,
+      "image": "./src/assets/card/begonia/10.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 22,
+      "category": "Бегония"
+    },
+    {
+      "id": 23,
+      "image": "./src/assets/card/begonia/11.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 23,
+      "category": "Бегония"
+    },
+    {
+      "id": 24,
+      "image": "./src/assets/card/begonia/12.jpg",
+      "price": "Договорная",
+      "title": "Элатиор",
+      "rating": 24,
+      "category": "Бегония"
+    },
+    {
+      "id": 25,
+      "image": "./src/assets/card/begonia/13.jpg",
+      "price": "Договорная",
+      "title": "Вечноцветущая",
+      "rating": 25,
+      "category": "Бегония"
+    },
+    {
+      "id": 26,
+      "image": "./src/assets/card/begonia/14.jpg",
+      "price": "Договорная",
+      "title": "Вечноцветущая",
+      "rating": 26,
+      "category": "Бегония"
+    },
+    {
+      "id": 27,
+      "image": "./src/assets/card/begonia/15.jpg",
+      "price": "Договорная",
+      "title": "Ампельная",
+      "rating": 27,
+      "category": "Бегония"
+    },
+    {
+      "id": 28,
+      "image": "./src/assets/card/fuksia/1.jpg",
+      "price": "Договорная",
+      "title": "Фуксия",
+      "rating": 28,
+      "category": "Фуксия"
+    },
+    {
+      "id": 29,
+      "image": "./src/assets/card/fuksia/2.jpg",
+      "price": "Договорная",
+      "title": "Фуксия",
+      "rating": 29,
+      "category": "Фуксия"
+    },
+    {
+      "id": 30,
+      "image": "./src/assets/card/fuksia/3.jpg",
+      "price": "Договорная",
+      "title": "Фуксия",
+      "rating": 30,
+      "category": "Фуксия"
+    },
+    {
+      "id": 31,
+      "image": "./src/assets/card/xrizentema/1.jpg",
+      "price": "Договорная",
+      "title": "Хризантема",
+      "rating": 31,
+      "category": "Хризантема"
+    },
+    {
+      "id": 32,
+      "image": "./src/assets/card/xrizentema/2.jpg",
+      "price": "Договорная",
+      "title": "Хризантема",
+      "rating": 32,
+      "category": "Хризантема"
+    },
+    {
+      "id": 33,
+      "image": "./src/assets/card/xrizentema/3.jpg",
+      "price": "Договорная",
+      "title": "Хризантема",
+      "rating": 33,
+      "category": "Хризантема"
+    },
+    {
+      "id": 34,
+      "image": "./src/assets/card/balzamin/1.jpg",
+      "price": "Договорная",
+      "title": "Бальзамин",
+      "rating": 34,
+      "category": "Бальзамин"
+    },
+    {
+      "id": 35,
+      "image": "./src/assets/card/balzamin/2.jpg",
+      "price": "Договорная",
+      "title": "Бальзамин",
+      "rating": 35,
+      "category": "Бальзамин"
+    },
+    {
+      "id": 36,
+      "image": "./src/assets/card/balzamin/3.jpg",
+      "price": "Договорная",
+      "title": "Бальзамин",
+      "rating": 36,
+      "category": "Бальзамин"
+    },
+    {
+      "id": 37,
+      "image": "./src/assets/card/oleandr/1.jpg",
+      "price": "Договорная",
+      "title": "Олеандр",
+      "rating": 37,
+      "category": "Олеандр"
+    },
+    {
+      "id": 38,
+      "image": "./src/assets/card/oleandr/2.jpg",
+      "price": "Договорная",
+      "title": "Олеандр",
+      "rating": 38,
+      "category": "Олеандр"
+    },
+    {
+      "id": 39,
+      "image": "./src/assets/card/oleandr/3.jpg",
+      "price": "Договорная",
+      "title": "Олеандр",
+      "rating": 39,
+      "category": "Олеандр"
+    }
+  ],
+  "users": [
+    {
+      "email": "nurelnasirov78@gmail.com",
+      "password": "$2a$10$/A9l6hKrXc7WR8sOga5w7.5xM6KIkRqH2mthJiuMR5r40h8MIX.gy",
+      "name": "Nurel",
+      "id": 1
+    },
+    {
+      "email": "nurelnasirov8@gmail.com",
+      "password": "$2a$10$D.c6U6wU0lMF56bgKEFSbu8IgzXHRhamrxDsNsNpn.jryg4LBoY0y",
+      "name": "Nurel",
+      "id": 2
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Данияр",
+      "title": "Хочу сказать огромное Спасибо администратору Ольге! Умничка! Справляется с самыми необычными     романтическими заказами и пожеланиями. Я - требовательный клиент, и я доволен! Потрясающее         обслуживание, быстро,качественно и надежно."
+    },
+    {
+      "id": 2,
+      "name": "Ильяс",
+      "title": "Очень приятно) Подарок понравился, качество хорошее. Пользоваться сервисом удобно, приятно. Порекомендую знакомым."
+    }
+  ],
+  "order": [
+   
+  ]
+}

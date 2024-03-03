@@ -1,0 +1,29 @@
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    .card{
+        position: relative;
+        text-align: center;
+        button{
+            background: white;
+            border: white;
+            padding: 6px;
+        }
+        img{
+            width: 250px;
+            height: 290px;
+            object-fit: cover;
+        }
+        .price{
+            font-weight: 300;
+            font-size: 34px;
+            color: rgba(75, 180, 94, 1);
+        }
+        .title{
+            font-size: 16px;
+            color: rgba(68, 68, 68, 1);
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.delivery{
+    padding: 60px;
+    .container{
+        width: Fill (825px);
+        height: Hug (1,951px);
+        gap: 30px;
+        h1{
+            font-family: Cormorant Garamond;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 44px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding-bottom: 40px;
+        }
+        .po{
+            font-family: Rubik;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding-bottom: 40px;
+        }
+    .container2{
+        width: Hug (825px);
+        height: Hug (562px);
+        gap: 15px;
+        padding-bottom: 20px;
+        h2{
+            font-family: Cormorant Garamond;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 39px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding-bottom: 20px;
+        }
+        .pa{
+            font-family: Rubik;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding-bottom: 10px;
+        }
+        .cont{
+            width: 925px;
+            height: 276px;
+            gap: 10px;
+            display: flex;
+            .con1{
+                width: Fill (271.67px);
+                height: Hug (276px);
+                .tab1{
+                    width: Fill (271.67px);
+                    height: Hug (46px);
+                    padding: 10px;
+                    border-radius: 5px;
+                    gap: 10px;
+                    background: rgba(237, 248, 239, 1);
+                    p{
+                        font-family: Rubik;
+                        font-size: 17px;
+                        font-weight: 500;
+                        line-height: 26px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        color: rgba(75, 180, 94, 1);
+                    }
+                }
+                .tab2{
+                    width: Fill (271.67px);
+                    height: Hug (46px);
+                    padding: 10px;
+                    border-radius: 5px;
+                    gap: 10px;
+                }
+                .tab3{
+                    width: Fill (271.67px);
+                    height: Hug (46px);
+                    padding: 10px;
+                    border-radius: 5px;
+                    gap: 10px;
+                    background: rgba(248, 248, 248, 1);
+                }
+            }
+        }
+    }
+    .container3{
+        width: Hug (825px);
+        height: Hug (364px);
+        gap: 15px;
+        padding-top: 30px;
+        h2{
+            font-family: Cormorant Garamond;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 39px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding-bottom: 20px;
+        }
+        .p{
+            font-family: Rubik;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        p{
+            font-family: Rubik;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+    }
+  }
+}

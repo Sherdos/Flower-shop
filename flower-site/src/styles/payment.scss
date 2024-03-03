@@ -1,0 +1,61 @@
+.payment{
+    padding: 80px;
+    .container{
+        width: Fill (825px);
+        height: Hug (1,250px);
+        h1{
+            font-family: Cormorant Garamond;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 44px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        p{
+            font-family: Rubik;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding-top: 30px;
+            padding-bottom: 10px;
+
+        }
+        .con{
+            width: Hug (825px);
+            height: Hug (106px);
+            gap: 15px;
+            h2{
+                font-family: Cormorant Garamond;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 39px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+            p{
+                font-family: Rubik;
+                font-size: 17px;
+                font-weight: 500;
+                line-height: 26px;
+                letter-spacing: 0em;
+                text-align: left;
+                font-weight: 300;
+            }
+            .pa{
+                font-family: Rubik;
+                font-size: 17px;
+                font-weight: 500;
+                line-height: 26px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+            .con1{
+                width: Fill (825px);
+                height: Hug (52px);
+                gap: 10px;
+            }
+        }
+    }
+}

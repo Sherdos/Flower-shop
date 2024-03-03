@@ -1,0 +1,87 @@
+.favorites{
+    display: flex;
+    justify-content: center;
+    .container{
+        padding: 30px;
+        h2{
+            padding-bottom: 30px;
+        }
+        .cfavorites{
+            width: 512.77px;
+            display: flex;
+            gap: 25px;
+            padding-bottom: 15px;
+            .img{
+                width: 90px;
+                height: 90px;
+                top: 229px;
+                left: 304px;
+                img{
+                    width: 90px;
+                    height: 90px;
+                    top: 229px;
+                    left: 304px;
+                    border-radius: 18px;
+                }
+            }
+            .con{
+                width: 408.77px;
+                height: 57px;
+                top: 235px;
+                left: 408px;
+                border-radius: 17px;
+                display: flex;
+                .ctitle{
+                    width: 408.77px;
+                    height: 57px;
+                    top: 235px;
+                    left: 408px;
+                    .title{
+                        top: 235px;
+                        left: 408px;
+                        font-family: Open Sans;
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 25px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                    }
+                    .price{
+                        top: 270px;
+                        left: 408px;
+                        font-family: Open Sans;
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 22px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        color: rgba(254, 114, 76, 1);
+                    }
+                }
+                .x{
+                    width: 16.77px;
+                    height: 16.77px;
+                    button{
+                        background: white;
+                        border: white;
+                    }
+                }
+            }
+        }
+        .btn{
+            width: 248px;
+            height: 60px;
+            padding-top: 20px;
+            padding-bottom: 60px;
+            border: white;
+            .button{
+            width: 248px;
+            height: 60px;
+            border-radius: 28.5px;
+            background: rgba(254, 114, 76, 1);
+            border: white;
+            color: white;
+            }  
+        }
+    }
+}

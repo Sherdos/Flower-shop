@@ -1,0 +1,100 @@
+.contacts{
+    width: Hug (1,110px);
+    height: Hug (1,944px);
+    padding-bottom: 25px;
+    .container{
+        width: Fill (825px);
+        height: Hug (1,944px);
+        h1{
+            font-family: Cormorant Garamond;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 44px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding-bottom: 50px;
+        }
+        .can{
+            width: Fill (825px);
+            height: Hug (1,268px);
+            padding-top: 20px;
+            .po{
+                padding-bottom: 10px;
+                font-family: Rubik;
+                font-weight: 400;
+                line-height: 26px;
+                letter-spacing: 0em;
+                text-align: left;
+                padding-top: 80px;
+            }
+            .pa{
+                font-family: Rubik;
+                font-size: 17px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0em;
+                text-align: left;
+                a{
+                    font-family: Rubik;
+                    font-size: 17px;
+                    font-weight: 300;
+                    line-height: 26px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                }
+            }
+            .pq{
+                font-family: Rubik;
+                font-size: 17px;
+                font-weight: 400;
+                line-height: 26px;
+                letter-spacing: 0em;
+                text-align: left;
+                padding-bottom: 18px;
+            }
+            .contact__buttons{
+                display: flex;
+                flex-wrap: wrap;
+                padding-bottom: 15px;
+                flex-direction: column;
+                align-items: flex-start;
+                .contact-buttons__option {
+                    background: rgba(75, 180, 94, .1);
+                    border-radius: 5px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: #4bb45e;
+                    flex: 1;
+                    padding-left: 5px;
+                    height: auto; 
+                    margin-bottom: 10px;
+                    a {
+                        padding-left: 80px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        .can {
+            padding-top: 40px; /* Adjusted padding for smaller screens */
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 576px) {
+    .container {
+        .can {
+            padding-top: 60px; /* Further adjusted padding for even smaller screens */
+        }
+    }
+}

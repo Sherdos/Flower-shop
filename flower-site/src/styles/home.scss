@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap');
+
+.home {
+    &__banner {
+        background-image: url(../assets/home/banner.jpg);
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &__content {
+            height: 600px;
+            display: flex;
+            align-items: center;
+
+            div {
+                padding: 30px 50px 40px 50px;
+                background: rgba(255, 255, 255, 0.95) ;
+                p {
+                    font-family: Cormorant Garamond;
+                    font-weight: 400;
+                    font-size: 42px;
+                    font-style: italic;
+                }
+                a{
+                    color: rgba(64, 112, 20, 1);
+                    text-decoration: underline;
+                }
+            }
+
+
+        }
+    }
+    .bestseller{
+        padding-bottom: 50px;
+        &__title{
+            margin: 50px 0;
+            font-weight: 700;
+            font-size: 36px;
+            text-align: center;
+            color: rgba(68, 68, 68, 1);
+            font-family: Cormorant Garamond;
+            font-style: normal;
+        }
+    }
+}
