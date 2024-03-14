@@ -8,7 +8,7 @@ class Card(models.Model):
     image = models.ImageField(verbose_name = 'фото', upload_to='flower_image/')
     price = models.CharField(max_length=100, verbose_name = 'название', default='Договорная')
     rating = models.IntegerField(verbose_name = 'рейтинг')
-    category = models.CharField(max_length=100, verbose_name='категория')
+    category = models.ForeignKey('flower.Category', on_delete=models.CASCADE, verbose_name='категория', related_name='card_category', null=True)
 
 
     
@@ -21,6 +21,22 @@ class Card(models.Model):
 
     def __str__(self):
         """Unicode representation of Card."""
+        return f'{self.title}'
+
+
+class Category(models.Model):
+    """Model definition for Category."""
+    title = models.CharField(max_length=100, verbose_name = 'название')
+    slug = models.SlugField(max_length=150, verbose_name = 'путь')
+    # TODO: Define fields here
+
+    class Meta:
+        """Meta definition for Category."""
+
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
+    def __str__(self):
         return f'{self.title}'
 
 

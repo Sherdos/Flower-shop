@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const favoritesApi = createApi({
   reducerPath: 'favoritesApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }), // Укажите свой путь к API
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }), // Укажите свой путь к API
   endpoints: (builder) => ({
     submitFavorites: builder.mutation({
       query: ({favorites , userId}) => ({
