@@ -8,6 +8,7 @@ class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
         fields = '__all__'
+        depth = 1
 
 class ReviewsSerializer(serializers.ModelSerializer):
     class Meta:

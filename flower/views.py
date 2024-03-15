@@ -7,6 +7,7 @@ from flower.models import Card, Order, Reviews
 from flower.serializers import CardSerializer, OrderSerializer, ReviewsSerializer, UserSerializer
 # Create your views here.
 
+# flower card
 
 class CardList(generics.ListAPIView):
     queryset = Card.objects.all()
@@ -16,18 +17,6 @@ class CardRetrieve(generics.RetrieveAPIView):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
     
-class ReviewsList(generics.ListCreateAPIView):
-    queryset = Reviews.objects.all()
-    serializer_class = ReviewsSerializer
-    
-class OrderList(generics.CreateAPIView):
-    queryset = Order.objects.all()
-    serializer_class = OrderSerializer
-
-class UserList(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-  
 class CategoryAPIView(generics.ListAPIView):
     serializer_class = CardSerializer
 
@@ -35,3 +24,18 @@ class CategoryAPIView(generics.ListAPIView):
         slug = self.kwargs.get('slug')
         cards = Card.objects.filter(category__slug=slug)
         return cards
+    
+    
+# other
+class ReviewsList(generics.ListCreateAPIView):
+    queryset = Reviews.objects.all()
+    serializer_class = ReviewsSerializer
+    
+class OrderCreate(generics.CreateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+class UserList(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+  

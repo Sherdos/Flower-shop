@@ -28,12 +28,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'user.apps.UserConfig',
+    'flower.apps.FlowerConfig',
+    
+    
     'rest_framework',
-    'flower',
-    'user',
     'drf_yasg',
     'rest_framework.authtoken',
     'corsheaders',
+    
 ]
 
 MIDDLEWARE = [
@@ -117,7 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'flower-site/dist/assets')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'flower-site/dist')]
+
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
@@ -126,19 +131,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_ALLOW_ALL = False
-
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:8000', 
-    'http://localhost:8000',
-    'http://127.0.0.1:7000',
-    'http://127.0.0.1:6000',
-    'http://127.0.0.1:5000',
-    'http://127.0.0.1:4000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:2000',
-    'http://127.0.0.1:1000',
-)
+CORS_ORIGIN_ALLOW_ALL = True
 
 CSRF_COOKIE_SAMESITE = 'Strict'
 SESSION_COOKIE_SAMESITE = 'Strict'

@@ -75,3 +75,23 @@ class Order(models.Model):
     def __str__(self):
         """Unicode representation of Order."""
         return f'Заказ номер {self.id}, {self.user.username} на цветы {self.card.title}'
+
+
+
+class Setting(models.Model):
+    """Model definition for Setting."""
+    logo = models.ImageField(verbose_name='логотип', upload_to='logo/')
+    phone = models.CharField(verbose_name='номер телефона', max_length=20)
+    address = models.CharField(verbose_name='адрес', max_length=100)
+    email = models.EmailField(verbose_name='почта')
+
+    # TODO: Define fields here
+
+    class Meta:
+        """Meta definition for Setting."""
+
+        verbose_name = 'Настройки'
+        verbose_name_plural = 'Настройки'
+
+    def __str__(self):
+        return f'Настройка {self.pk}'
