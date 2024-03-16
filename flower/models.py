@@ -61,7 +61,6 @@ class Order(models.Model):
     """Model definition for Order."""
 
     user = models.ForeignKey(User, verbose_name = 'пользователь', on_delete=models.CASCADE)
-    card = models.ForeignKey(Card, verbose_name = 'Цветы', on_delete=models.CASCADE)
     
     
     # TODO: Define fields here
@@ -74,8 +73,18 @@ class Order(models.Model):
 
     def __str__(self):
         """Unicode representation of Order."""
-        return f'Заказ номер {self.id}, {self.user.username} на цветы {self.card.title}'
+        return f'Заказ номер {self.id}, {self.user.username}'
 
+class FlowerOrder(models.Model):
+    """Model definition for FlowerOrder."""
+    card = models.ForeignKey(Card, verbose_name = 'Цветы',on_delete=models.CASCADE, related_name='card_flower')
+    order = models.ForeignKey(Order, verbose_name = 'Заказ',on_delete=models.CASCADE, related_name='card_order')
+
+    # TODO: Define fields here
+
+
+    def __str__(self):
+        return f'Цветы {self.card.title}'
 
 
 class Setting(models.Model):

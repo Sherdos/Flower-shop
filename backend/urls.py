@@ -16,7 +16,7 @@ schema_view = get_schema_view(
         contact=openapi.Contact(email='sherdo26@gmail.com')
     ),
     public=True,
-    permission_classes=(permissions.AllowAny,),
+    permission_classes=(permissions.IsAdminUser,),
 )
 
 urlpatterns = [
@@ -24,9 +24,12 @@ urlpatterns = [
     path('docs<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('', include('flower.urls')),
-    path('', include('user.urls')),
-    re_path(r'.*', TemplateView.as_view(template_name = 'index.html')),
+    path('api/v1/', include('flower.urls')),
+    path('api/', include('user.urls')),
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+    
+urlpatterns += [re_path(r'.*', TemplateView.as_view(template_name = 'index.html')),]
