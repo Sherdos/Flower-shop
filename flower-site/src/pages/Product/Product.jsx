@@ -7,7 +7,7 @@ import { addToFavorites } from '../../store/favoriteSlice';
 
 const Product = () => {
     const { id } = useParams()
-    const { data } = useGetProductQuery(id)
+    const { data={} } = useGetProductQuery(id)
     console.log(data);
     const dispatch = useDispatch();
     const handleAddToFavorites = () => {
@@ -16,8 +16,15 @@ const Product = () => {
             image: data.image,
             price: data.price,
             title: data.title,
-            category: data.category}
+            category: data.category.title}
         ));
+        console.log(
+            { id: data.id,
+                image: data.image,
+                price: data.price,
+                title: data.title,
+                category: data.category.title}
+        );
     };
     return (
         <div className="container">

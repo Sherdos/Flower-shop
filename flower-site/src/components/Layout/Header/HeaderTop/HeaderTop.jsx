@@ -1,15 +1,73 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearUser } from "../../../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const HeaderTop = () => {
-  const data = useSelector((state) => state.auth.user);
-  //   console.log(data.username);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState("false");
   const dispath = useDispatch();
   const navigate = useNavigate();
+
+  const isResponseOk = (response) => {
+    if (response.status >= 200 && response.status <= 299) {
+      return response.json();
+    } else {
+      throw Error(response.statusText);
+    }
+  };
+
+  useEffect(() => {
+    whoami();
+    getSession();
+  }, []);
+
+  const whoami = () => {
+    fetch("/api/whoami/", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "same-origin",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUsername(data.username);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  console.log(username);
+  const getSession = () => {
+    fetch("/api/session/", {
+      credentials: "same-origin",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.isAuthenticated) {
+          setIsAuthenticated(true);
+        } else {
+          setIsAuthenticated(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handleLogout = () => {
+    fetch("/api/logout/", {
+      credentials: "same-origin",
+    })
+      .then(isResponseOk)
+      .then((data) => {
+        setIsAuthenticated(false);
+        setUsername('')
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     // Очищаем данные пользователя и перенаправляем на страницу входа
     dispath(clearUser());
     localStorage.removeItem("user"); // Очищаем данные из localStorage
@@ -41,8 +99,8 @@ const HeaderTop = () => {
           </ul>
           <ul className="header__top__nav__auth">
             <li className="one">
-              {data ? (
-                data.username
+              {username ? (
+                username
               ) : (
                 <Link to={"auth/login"}>
                   <span>
@@ -64,7 +122,7 @@ const HeaderTop = () => {
               )}
             </li>
             <li>
-              {data ? (
+              {username ? (
                 <button onClick={handleLogout}>выйти</button>
               ) : (
                 <Link to={"auth/register"}>

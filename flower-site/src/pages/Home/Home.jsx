@@ -37,7 +37,7 @@ const Home = () => {
                 image={item.image}
                 price={item.price}
                 title={item.title}
-                category={item.category}
+                category={item.category.title}
               />
             ))}
           </div>
