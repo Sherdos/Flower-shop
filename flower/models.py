@@ -13,6 +13,7 @@ class Card(models.Model):
 
     
 
+
     class Meta:
         """Meta definition for Card."""
 

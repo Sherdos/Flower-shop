@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     
     'user.apps.UserConfig',
     'flower.apps.FlowerConfig',
+    'cart.apps.CartConfig',
     
     
     'rest_framework',
@@ -139,9 +140,9 @@ CSRF_COOKIE_HTTPONLY = False  # False since we will grab it via universal-cookie
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-    ],
+    # 'DEFAULT_RENDERER_CLASSES': [
+    #     'rest_framework.renderers.JSONRenderer',
+    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
     ],
