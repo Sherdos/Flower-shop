@@ -1,7 +1,5 @@
-import json
 from rest_framework import serializers
 from cart.models import Cart, CartUser
-# from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 
 class CartUserSerializer(serializers.ModelSerializer):
@@ -11,7 +9,6 @@ class CartUserSerializer(serializers.ModelSerializer):
 
 class CartSerializer(serializers.ModelSerializer):
     cards = serializers.SerializerMethodField()
-    
     class Meta:
         model = Cart
         fields = ['id','user','cards']
@@ -20,4 +17,6 @@ class CartSerializer(serializers.ModelSerializer):
         cart_users = CartUser.objects.filter(cart_id=obj.pk)
         serializer = CartUserSerializer(cart_users, many=True)
         return serializer.data
+    
+    
         
