@@ -28,6 +28,10 @@ class CartByUserIdAPIView(APIView):
 
 
 class AddCardAPIView(generics.CreateAPIView):
-    query = CartUser.objects.all()
+    queryset = CartUser.objects.all()
+    serializer_class = CartUserSerializer
+    
+class DeleteCardAPIView(generics.DestroyAPIView):
+    queryset = CartUser.objects.all()
     serializer_class = CartUserSerializer
         
