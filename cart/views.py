@@ -22,7 +22,9 @@ class CartByUserIdAPIView(APIView):
             serializer = CartSerializer(cart)
             return Response(serializer.data)
         except Cart.DoesNotExist:
-            return Response({"message": "Cart does not exist for the given user_id"}, status=status.HTTP_404_NOT_FOUND)
+            cart = Cart.objects.create(user_id=user_id)
+            serializer = CartSerializer(cart)
+            return Response(serializer.data)
 
 
 class AddCardAPIView(generics.CreateAPIView):
