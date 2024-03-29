@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from cart.models import Cart, CartUser
-from cart.serializers import CartSerializer, CartUserSerializer
+from cart.serializers import AddCartUserSerializer, CartSerializer, CartUserSerializer
 
 from cart.models import Cart
 from cart.serializers import CartSerializer
@@ -29,7 +29,7 @@ class CartByUserIdAPIView(APIView):
 
 class AddCardAPIView(generics.CreateAPIView):
     queryset = CartUser.objects.all()
-    serializer_class = CartUserSerializer
+    serializer_class = AddCartUserSerializer
     
 class DeleteCardAPIView(generics.DestroyAPIView):
     queryset = CartUser.objects.all()
