@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useGetAllCardsQuery } from "../../store/cardSlice";
+import { useNavigate } from "react-router-dom";
 import { useUser } from "../../store/context";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -7,24 +7,21 @@ const cookies = new Cookies();
 const Favorites = () => {
   const [cartId, setCartId] = useState([]);
   const { userId } = useUser();
-  const { data = [], isLoading } = useGetAllCardsQuery();
-  let cartDataId = cartId.map((item) => item.card);
-  let filterData = data.filter((item) => cartDataId.includes(item.id));
-  console.log("filter data", filterData, cartDataId);
+  const cartCards = cartId.cards;
+  const navigate = useNavigate();
   useEffect(() => {
     getCart();
   }, []);
 
   console.log("bayel", userId);
-  console.log("bayel cart", cartId);
-
+  console.log("bayel cart", cartCards);
   const getCart = async () => {
     try {
       const response = await fetch(`/api/v2/cart/by_user_id/${userId}/`);
       const data = await response.json();
-      console.log("cart data: ", data?.cards);
-      setCartId(data?.cards);
-      console.log("cart data: ", data?.cards);
+      console.log("cart data: ", data);
+      setCartId(data);
+      console.log("cart data: ", data);
     } catch (err) {
       console.log(err);
     }
@@ -44,7 +41,7 @@ const Favorites = () => {
           cards: [{ card_id: item.id }],
         }),
       })
-        .then((res) => alert('Заказ успещно оформелено'))
+        .then((res) => alert("Заказ успещно оформелено"))
         .catch((err) => console.log(err.message));
     }
   };
@@ -52,31 +49,32 @@ const Favorites = () => {
   console.log(cartId);
 
   const handleRemoveFromFavorites = (id) => {
-    fetch(`/api/v2/cart/delete/card/4/`, {
+    fetch(`/api/v2/cart/delete/card/${id}/`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         "X-CSRFToken": cookies.get("csrftoken"),
       },
       credentials: "same-origin",
-    })
-    .then((res)=> alert(res))
-    .catch((res)=> alert('Error'))
+    });
+    const updatedFavorites = cartId.cards.filter((favorite) => favorite.id !== id);
+    setCartId({ ...cartId, cards: updatedFavorites });
   };
 
   return (
     <div className="favorites">
       <div className="container">
         <h2>Корзина</h2>
-        {filterData.map((favorite, index) => (
+
+        {cartCards?.map((favorite, index) => (
           <div key={index} className="cfavorites">
             <div className="img">
-              <img src={favorite.image} alt="" />
+              <img src={favorite.card.image} alt="" />
             </div>
             <div className="con">
               <div className="ctitle">
-                <h1 className="title">{favorite.title}</h1>
-                <p className="price">Цена: {favorite.price}</p>
+                <h1 className="title">{favorite.card.title}</h1>
+                <p className="price">Цена: {favorite.card.price}</p>
               </div>
               <div className="x">
                 <button onClick={() => handleRemoveFromFavorites(favorite.id)}>
@@ -86,6 +84,7 @@ const Favorites = () => {
             </div>
           </div>
         ))}
+
         <div className="btn">
           <button onClick={handleFavoritesSubmit} className="button">
             Оформить заказ
