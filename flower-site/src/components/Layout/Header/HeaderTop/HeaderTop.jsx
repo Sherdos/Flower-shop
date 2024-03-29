@@ -39,6 +39,8 @@ const HeaderTop = () => {
       });
   };
   console.log(username);
+  
+  
   const getSession = () => {
     fetch("/api/session/", {
       credentials: "same-origin",

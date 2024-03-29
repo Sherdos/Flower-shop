@@ -11,19 +11,11 @@ export const cardSlice = createApi({
     }),
     getProduct: build.query({
       query: (id) => `card/${id}/`,
-    }),
-    addProduct: build.mutation({
-      query: (cards) => ({
-        url: "order/",
-        method: "POST",
-        body: cards,
-      }),
-      invalidatesTags: ["card"],
     })
   }),
 });
 
 export const {
   useGetAllCardsQuery,
-  useGetProductQuery
+  useGetProductQuery,
 } = cardSlice;

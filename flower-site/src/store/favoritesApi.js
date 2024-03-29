@@ -1,17 +1,14 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const favoritesApi = createApi({
-  reducerPath: 'favoritesApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }), // Укажите свой путь к API
-  endpoints: (builder) => ({
-    submitFavorites: builder.mutation({
-      query: ({favorites , userId}) => ({
-        url: "order", // Укажите свой путь для заказов
-        method: "POST",
-        body: {favorites , userId}
-      }),
+  reducerPath: "favoritesApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }), 
+  endpoints: (build) => ({
+    whoami: build.query({
+      query: () => "api/whoami/"
     }),
   }),
 });
 
-export const { useSubmitFavoritesMutation } = favoritesApi;
+export const {  useWhoamiQuery } = favoritesApi;
+

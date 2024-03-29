@@ -1,39 +1,37 @@
-import React, { useEffect } from "react";
-import { removeFromFavorites } from "../../store/favoriteSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { useSubmitFavoritesMutation } from "../../store/favoritesApi";
+import React, { useEffect, useState } from "react";
+import { useGetAllCardsQuery } from "../../store/cardSlice";
+import { useUser } from "../../store/context";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 const Favorites = () => {
-  const [submitFavorites, { isLoading, isError }] = useSubmitFavoritesMutation();
-  const user = useSelector((state) => state.auth.user);
-  const favorites = useSelector((state) => state.favorites.favorites);
+  const [cartId, setCartId] = useState([]);
+  const { userId } = useUser();
+  const { data = [], isLoading } = useGetAllCardsQuery();
+  let cartDataId = cartId.map((item) => item.card);
+  let filterData = data.filter((item) => cartDataId.includes(item.id));
+  console.log("filter data", filterData, cartDataId);
   useEffect(() => {
-    whoami();
+    getCart();
   }, []);
-  let userId;
-  const whoami = () => {
-    fetch("/api/whoami/", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "same-origin",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        userId = data.id;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+  console.log("bayel", userId);
+  console.log("bayel cart", cartId);
+
+  const getCart = async () => {
+    try {
+      const response = await fetch(`/api/v2/cart/by_user_id/${userId}/`);
+      const data = await response.json();
+      console.log("cart data: ", data?.cards);
+      setCartId(data?.cards);
+      console.log("cart data: ", data?.cards);
+    } catch (err) {
+      console.log(err);
+    }
   };
-  console.log(userId);
 
-
-  const handleFavoritesSubmit = (event) => {
-    event.preventDefault();
-    for (const item of favorites) {
+  const handleFavoritesSubmit = () => {
+    for (const item of filterData) {
       fetch("api/v1/order/", {
         method: "POST",
         headers: {
@@ -46,22 +44,31 @@ const Favorites = () => {
           cards: [{ card_id: item.id }],
         }),
       })
-        .then((res) => console.log(res))
+        .then((res) => alert('Заказ успещно оформелено'))
         .catch((err) => console.log(err.message));
     }
   };
 
-  console.log(favorites);
-  console.log(user);
-  const dispatch = useDispatch();
+  console.log(cartId);
+
   const handleRemoveFromFavorites = (id) => {
-    dispatch(removeFromFavorites(id));
+    fetch(`/api/v2/cart/delete/card/4/`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": cookies.get("csrftoken"),
+      },
+      credentials: "same-origin",
+    })
+    .then((res)=> alert(res))
+    .catch((res)=> alert('Error'))
   };
+
   return (
     <div className="favorites">
       <div className="container">
         <h2>Корзина</h2>
-        {favorites.map((favorite, index) => (
+        {filterData.map((favorite, index) => (
           <div key={index} className="cfavorites">
             <div className="img">
               <img src={favorite.image} alt="" />
@@ -80,14 +87,9 @@ const Favorites = () => {
           </div>
         ))}
         <div className="btn">
-          <button
-            onClick={handleFavoritesSubmit}
-            disabled={isLoading}
-            className="button"
-          >
-            {isLoading ? "Оформляется..." : "Оформить заказ"}
+          <button onClick={handleFavoritesSubmit} className="button">
+            Оформить заказ
           </button>
-          {isError && <div>Ошибка при отправке заказа</div>}
         </div>
       </div>
     </div>
