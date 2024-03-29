@@ -3,6 +3,7 @@ import HeaderTop from './HeaderTop/HeaderTop';
 import HeaderBootom from './HeaderBottom/HeaderBootom';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import logo from '../../../assets/header.png/logo.jpg'
 
 const Header = () => {
     const data = useSelector(state=> state.auth.user)
@@ -13,7 +14,7 @@ const Header = () => {
                 <div className="header">
                     <div className='header__logo'>
                         <Link to={'/'}>
-                            <img src="src/assets/header.png/image 1.png" alt="ФлораМаркт" />
+                            <img src={logo} alt="ФлораМаркт" />
                             <div>сеть цветочных оптово-розничных центров</div>
                         </Link>
                     </div>

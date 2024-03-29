@@ -62,10 +62,10 @@ const Reviews = () => {
 		  text:data.title,
 		  user:userId ,
 		}),
+   
 	})
-	.then((res) => res.json())
-	.then((res) => console.log(res));
-	 navigate("/reviews");
+	
+	 
   };
   return (
     <div className="reviews">
